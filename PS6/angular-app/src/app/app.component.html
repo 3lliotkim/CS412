@@ -1,0 +1,13 @@
+<!-- src/app/app.component.html -->
+<div *ngIf="data">
+  <h1>Data from PS4 Backend</h1>
+  <ul>
+    <li *ngFor="let item of data.items">
+      {{ item.name }} - {{ item.main.temp }}
+    </li>
+  </ul>
+</div>
+<div *ngIf="!data">
+  <p>Data is not available. Click the button to fetch data.</p>
+</div>
+<button (click)="fetchData()">Fetch Data</button>
