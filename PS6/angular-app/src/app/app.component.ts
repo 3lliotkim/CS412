@@ -12,6 +12,7 @@ import { mockData } from './mock-data'; // Import the mock data
 })
 export class AppComponent {
   data = mockData; // Data received from the backend
+  title = 'angular-app';
 
   // Simulate fetching data from the PS4 backend
   fetchData() {
