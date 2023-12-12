@@ -11,7 +11,7 @@ app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
 
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use('/ps4', ps4Router);
+app.use('/', ps4Router);
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);

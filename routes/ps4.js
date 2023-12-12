@@ -1,16 +1,12 @@
 // routes/ps4.js
 const express = require('express');
 const router = express.Router();
-const { getApiDataPromise, getApiDataAsyncAwait, getApiDataCallback } = require('../controllers/apiController');
+const { getApiData } = require('../controllers/apiController');
 
-router.get('/', (req, res) => {
-  res.render('searchForm');
-});
-
-router.post('/promise', getApiDataPromise);
-
-router.post('/asyncawait', getApiDataAsyncAwait);
-
-router.post('/callback', getApiDataCallback);
+router.route('/')
+  .get((req, res) => {
+    res.render('searchForm');
+  })
+  .post(getApiData);
 
 module.exports = router;
